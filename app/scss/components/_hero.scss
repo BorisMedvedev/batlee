@@ -41,6 +41,10 @@ p {
   margin-bottom: 30px;
   overflow: hidden;
 
+  @include r(1540) {
+    margin-bottom: 10px;
+    max-width: 480px;
+  }
   @include r(1440) {
     margin-bottom: 10px;
     max-width: 550px;
