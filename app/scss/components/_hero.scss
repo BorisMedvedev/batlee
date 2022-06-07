@@ -6,8 +6,13 @@
   background-position: center top;
   background-size: cover;
   color: aliceblue;
+
+  @include r(1536) {
+    padding-top: 120px;
+  }
+
   @include r(768) {
-    padding-top: 180px;
+    padding-top: 170px;
   }
 
   &__container {
@@ -24,6 +29,7 @@
     height: calc(100vh - 73px);
     padding-top: 100px;
   }
+
   @include r(768) {
     height: inherit;
   }
@@ -45,13 +51,14 @@ p {
     margin-bottom: 10px;
     max-width: 480px;
   }
+
   @include r(1440) {
     margin-bottom: 10px;
     max-width: 550px;
   }
 
   @include r(768) {
-   margin-bottom: 50px;
+    margin-bottom: 50px;
   }
 
   &__video {
@@ -141,14 +148,14 @@ p {
   font-size: 18px;
   text-transform: uppercase;
   transition: background-image 0.2s, color 0.3s;
-  filter: brightness(90%);
+  filter: brightness(100%);
   border-radius: 10px;
   transition: filter 0.3s, box-shadow 0.3s;
 
 
   &:hover {
     filter: brightness(120%);
-    box-shadow: 2px 3px 18px 5px rgba(245, 109, 56, 0.5);
+    box-shadow: 2px 3px 18px 5px rgba(245, 109, 56, 0.7);
   }
 }
 
@@ -162,6 +169,7 @@ p {
   font-size: 18px;
   text-transform: uppercase;
   transition: background-image 0.3s, color 0.3s, box-shadow 0.3s;
+
   @include r(500) {
     padding: 10px 80px;
     margin-bottom: 20px;
@@ -177,10 +185,11 @@ p {
   padding-bottom: 20px;
   display: block;
   text-align: center;
+
   @include r(500) {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
 
   }
 }
@@ -195,8 +204,9 @@ p {
     @include r(1024) {
       margin-right: 5px;
     }
+
     @include r(500) {
-     margin-right: 0;
+      margin-right: 0;
 
     }
 
@@ -207,13 +217,15 @@ p {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+
   @include r(768) {
     flex-direction: column;
-    align-items:center;
+    align-items: center;
   }
 
   &__left {
     text-align: center;
+
     @include r(768) {
 
       margin-bottom: 30px;
@@ -223,6 +235,7 @@ p {
 
   &__center {
     text-align: center;
+
     @include r(768) {
       order: -1;
       margin-bottom: 30px;
@@ -232,6 +245,7 @@ p {
 
   &__right {
     text-align: center;
+
     @include r(768) {
       order: -3;
       margin-bottom: 30px;
@@ -248,6 +262,10 @@ p {
 
   }
 
+  &__left-btn {
+    display: flex;
+  }
+
   &__center-btn {
     display: block;
     padding: 20px 50px;
@@ -261,7 +279,7 @@ p {
     font-size: 22px;
     text-transform: uppercase;
     color: #fff;
-    filter: brightness(90%);
+    filter: brightness(100%);
     transition: filter 0.3s, box-shadow 0.3s;
 
     @include r(1440) {
@@ -272,6 +290,7 @@ p {
       width: 250px;
       height: 60px;
     }
+
     @include r(768) {
       margin-bottom: 10px;
       font-size: 18px;
@@ -281,6 +300,7 @@ p {
       width: 370px;
       height: 80px;
     }
+
     @include r(500) {
       width: 290px;
 
@@ -288,7 +308,7 @@ p {
 
     &:hover {
       filter: brightness(120%);
-      box-shadow: 0px 0px 23px 5px rgba(63, 175, 236, 0.5);
+      box-shadow: 0px 0px 23px 5px rgba(63, 175, 236, 0.7);
     }
 
     & span {
@@ -296,6 +316,64 @@ p {
       text-transform: uppercase;
       color: #c0bebe;
     }
+  }
+
+  &__item {
+    position: relative;
+  }
+}
+
+
+.tooltip {
+  width: 350px;
+  position: absolute;
+  bottom: 50px;
+  left: -250%;
+  padding: 20px 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: $black;
+  border: 2px solid #f38052;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+
+  &__img {
+    margin-right: 20px;
+    max-width: 50px;
+    width: 100%;
+    border: 2px solid #772302;
+    border-radius: 5px;
+    transition: box-shadow 0.3s, border 0.3s, filter 0.3s, transform 0.3s;
+    filter: brightness(100%);
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+&__pol{
+  text-align: left;
+  padding-left: 70px;
+}
+  &__info {
+        text-align: left;
+  }
+
+  &__footer {
+        text-align: left;
+    padding-left: 70px;
+  }
+  &__name{
+    color: #0799f0;
+  }
+  &__type{
+    color: #ffd200;
+  }
+  &__text{
+    color: #ffa400;
   }
 }
 
@@ -310,20 +388,30 @@ p {
   transition: box-shadow 0.3s, border 0.3s, filter 0.3s, transform 0.3s;
   filter: brightness(100%);
 
+
   @include r(884) {
     width: 25px;
     height: 25px;
     margin-right: 0;
   }
+
   @include r(768) {
     width: 40px;
     height: 40px;
     margin-right: 0
   }
+
   @include r(500) {
     width: 30px;
     height: 30px;
 
+  }
+
+
+  &:hover + .tooltip{
+    visibility: visible;
+    box-shadow: 2px 3px 18px 5px rgba(245, 109, 56, 0.3);
+    opacity: 1;
   }
 
   &:hover {
@@ -339,6 +427,9 @@ p {
 
   }
 }
+
+
+
 
 .btn-text {
   @include r(1440) {

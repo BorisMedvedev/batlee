@@ -19,8 +19,11 @@
     grid-area: 1 / 2 / 2 / 3;
     align-self: center;
     justify-self: center;
+    @include r(1536) {
+      max-width:120px;
+    }
     @include r(1440) {
-      max-width:150px;
+      max-width:140px;
     }
 
   }
