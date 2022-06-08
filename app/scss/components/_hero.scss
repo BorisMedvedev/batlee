@@ -330,7 +330,7 @@ p {
 }
 
 .tooltip {
-  width: 350px;
+  width: 400px;
   position: absolute;
   bottom: 50px;
   left: -100%;
@@ -345,9 +345,9 @@ p {
   transition: opacity 0.3s, visibility 0.3s;
 
   @include r(560) {
-    width: 200px;
+    width: 210px;
     font-size: 11px;
-    left: -160%;
+    left: -170%;
   }
 
   &__img {
@@ -388,7 +388,7 @@ p {
   &__name {
     font-size: 14px;
     font-weight: 700;
-    color: #0799f0;
+    color: $white;
   }
 
   &__type {
@@ -467,4 +467,17 @@ p {
 
 .timer {
   color: #f8c275;
+}
+
+
+.green{
+  color: #0af802;
+}
+
+.blue{
+  color: #3a75f5;
+}
+
+.text {
+  color: $white;
 }
