@@ -9,7 +9,7 @@
 
 
   @include r(1536) {
-    padding-top: 120px;
+    padding-top: 110px;
   }
 
   @include r(768) {
@@ -95,7 +95,7 @@ p {
     color: #e4e4e4;
 
     @include r(1440) {
-      margin-bottom: 10px;
+      margin-bottom: 0;
     }
 
   }
@@ -116,7 +116,7 @@ p {
     text-align: center;
 
     @include r(1440) {
-      padding: 10px;
+      padding: 5px;
     }
 
   }
@@ -281,7 +281,7 @@ p {
     background-image: url("../../images/button3.png");
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 18px;
+    border-radius: 10px;
     font-size: 22px;
     text-transform: uppercase;
     color: #fff;
@@ -290,11 +290,11 @@ p {
 
     @include r(1440) {
       font-size: 16px;
-      line-height: 15px;
-      padding: 20px 20px;
+      line-height: 14px;
+      padding: 15px 10px;
       margin-bottom: 5px;
-      width: 250px;
-      height: 60px;
+      width: 300px;
+      height: 50px;
     }
 
     @include r(768) {
@@ -331,20 +331,24 @@ p {
 
 
 .tooltip {
-  width: 400px;
+  width: 300px;
   position: absolute;
   bottom: 50px;
-  left: -250%;
+  left: -100%;
   padding: 20px 10px;
   font-size: 12px;
-  letter-spacing: 0.5px;
   border-radius: 10px;
-  background-color: $black;
+  background-color: rgba(0, 0, 0, 0.7);
   border: 1px solid #772302;
   z-index: 99;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
+  @include r(560) {
+    width: 200px;
+    font-size: 11px;
+    left: -160%;
+  }
 
   &__img {
     margin-right: 20px;
@@ -354,6 +358,9 @@ p {
     border-radius: 5px;
     transition: box-shadow 0.3s, border 0.3s, filter 0.3s, transform 0.3s;
     filter: brightness(100%);
+    @include r(560) {
+      margin-right: 5px;
+    }
   }
 
   &__header {
@@ -365,6 +372,7 @@ p {
   &__pol {
     text-align: left;
     padding-left: 70px;
+
   }
 
   &__info {
@@ -374,6 +382,9 @@ p {
   &__footer {
     text-align: left;
     padding-left: 70px;
+    @include r(560) {
+      padding-left: 55px;
+    }
   }
 
   &__name {
